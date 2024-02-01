@@ -265,53 +265,40 @@
     /* Custom Defined Behaviors */
 / {
     behaviors {
-    // mod/mod-shift tap-dance
-    command_td: command_td_1 {
+    td_x: tap_dance_x {
         compatible = "zmk,behavior-tap-dance";
-        label = "COMMAND_TAP_DANCE";
         #binding-cells = <0>;
         tapping-term-ms = <200>;
-        bindings = <&kp LGUI>, <&kp LS(LGUI)>;
+        bindings = <&kp X>, <&kp LG(X)>;
     };
 
-    loption_td: option_td_1 {
+    td_c: tap_dance_c {
         compatible = "zmk,behavior-tap-dance";
-        label = "LOPTION_TAP_DANCE";
         #binding-cells = <0>;
         tapping-term-ms = <200>;
-        bindings = <&kp LALT>, <&kp LS(LALT)>;
-    };
-    roption_td: option_td_2 {
-        compatible = "zmk,behavior-tap-dance";
-        label = "ROPTION_TAP_DANCE";
-        #binding-cells = <0>;
-        tapping-term-ms = <200>;
-        bindings = <&kp RALT>, <&kp LS(RALT)>;
+        bindings = <&kp C>, <&kp LG(C)>;
     };
 
-    ctrl_td: ctrl_td_1 {
+    td_v: tap_dance_v {
         compatible = "zmk,behavior-tap-dance";
-        label = "CTRL_TAP_DANCE";
         #binding-cells = <0>;
         tapping-term-ms = <200>;
-        bindings = <&kp LCTRL>, <&kp LS(LCTRL)>;
+        bindings = <&kp V>, <&kp LG(V)>;
     };
 
-    lshift_td: shift_td_1 {
+    td_w: tap_dance_w {
         compatible = "zmk,behavior-tap-dance";
-        label = "LSHIFT_TAP_DANCE";
         #binding-cells = <0>;
         tapping-term-ms = <200>;
-        bindings = <&kp LSHIFT>, <&kp CAPSLOCK >;
-    };
-    rshift_td: shift_td_2 {
-        compatible = "zmk,behavior-tap-dance";
-        label = "LSHIFT_TAP_DANCE";
-        #binding-cells = <0>;
-        tapping-term-ms = <200>;
-        bindings = <&kp RSHIFT>, <&kp CAPSLOCK >;
+        bindings = <&kp W>, <&kp LG(W)>;
     };
 
+    td_t: tap_dance_t {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&kp T>, <&kp LG(T)>;
+    };
 //////////////////////////////////////////////////////////////////////////
 //
 // ** BEGIN BEHAVIORS (copied from https://my.glove80.com/#/layout/user/c4d374f7-6439-4454-af14-efe617bba9e3)
@@ -630,12 +617,12 @@ macros {
 
         layer_Base {
             bindings = <
-              &kp ESC               &none               &none               &kp F3                 &none                                                                                                                    &none                 &none                &none                        &none           &kp C_SLEEP
-            &kp EQUAL              &kp N1              &kp N2               &kp N3                &kp N4  &kp N5                                                                                    &kp N6                 &kp N7                &kp N8               &kp N9                       &kp N0             &kp MINUS
-            &kp GRAVE               &kp Q               &kp W                &kp E                 &kp R   &kp T                                                                                     &kp Y                  &kp U                 &kp I                &kp O                        &kp P              &kp BSLH
-    &cappy CAPSLOCK 0  &homey_left LGUI A  &homey_left LALT S  &homey_left LCTRL D  &shift_left LSHIFT F   &kp G                                                                                     &kp H  &shift_right RSHIFT J  &homey_right RCTRL K  &homey_right RALT L  &homey_right RGUI SEMICOLON               &kp SQT
-            &sk LSHFT               &kp Z               &kp X                &kp C                 &kp V   &kp B               &none           &none   &none   &none         &none           &none   &kp N                  &kp M             &kp COMMA              &kp DOT                     &kp FSLH             &sk RSHFT
- &magic LAYER_Magic 0               &none               &none                &none                 &none          &thumb 3 BACKSPACE  &thumb 1 ENTER   &none   &none  &thumb 1 TAB  &space 3 SPACE                          &none                 &none                &none                        &none  &magic LAYER_Magic 0
+              &kp ESC               &none               &none               &kp F3                 &none                                                                                                                                             &none                 &none                &none                        &none           &kp C_SLEEP
+            &kp EQUAL              &kp N1              &kp N2               &kp N3                &kp N4              &kp N5                                                                                                 &kp N6                 &kp N7                &kp N8               &kp N9                       &kp N0             &kp MINUS
+            &kp GRAVE               &kp Q               &kp W                &kp E                 &kp R               &kp T                                                                                                  &kp Y                  &kp U                 &kp I                &kp O                        &kp P              &kp BSLH
+    &cappy CAPSLOCK 0  &homey_left LGUI A  &homey_left LALT S  &homey_left LCTRL D  &shift_left LSHIFT F  &homey_left LGUI G                                                                                    &homey_right RGUI H  &shift_right RSHIFT J  &homey_right RCTRL K  &homey_right RALT L  &homey_right RGUI SEMICOLON               &kp SQT
+            &sk LSHFT               &kp Z               &kp X                &kp C                 &kp V               &kp B               &none           &none   &none   &none         &none           &none                &kp N                  &kp M             &kp COMMA              &kp DOT                     &kp FSLH             &sk RSHFT
+ &magic LAYER_Magic 0               &none               &none                &none                 &none                      &thumb 3 BACKSPACE  &thumb 1 ENTER   &none   &none  &thumb 1 TAB  &space 3 SPACE                                       &none                 &none                &none                        &none  &magic LAYER_Magic 0
             >;
         };
 
@@ -663,12 +650,12 @@ macros {
 
         layer_symbols {
             bindings = <
- &trans      &trans      &trans     &trans    &trans                                                                                             &trans                    &trans                   &trans                       &trans  &trans
- &trans      &trans      &trans     &trans    &trans      &trans                                                  &kp LS(N6)                     &trans                    &trans                   &trans                       &trans  &trans
- &trans  &kp LS(N1)  &kp LS(N2)   &kp LBKT  &kp RBKT    &kp BSLH                                                  &kp LS(N7)                  &kp KP_N7                 &kp KP_N8                &kp KP_N9                       &trans  &trans
- &trans  &kp LS(N3)    &kp DLLR   &kp LPAR  &kp RPAR   &kp GRAVE                                                  &kp LS(N5)  &shift_right RSHIFT KP_N4  &homey_right RCTRL KP_N5  &homey_right RALT KP_N6  &homey_right RGUI SEMICOLON  &trans
- &trans   &kp PRCNT   &kp EQUAL  &kp MINUS   &kp SQT  &kp LS(N8)  &trans  &trans  &trans  &trans  &trans  &trans  &kp LS(N9)                  &kp KP_N1                 &kp KP_N2                &kp KP_N3                       &trans  &trans
- &trans      &trans      &trans     &trans    &trans              &trans  &trans  &trans  &trans  &trans  &trans                              &kp KP_N0                 &kp KP_N0               &kp KP_DOT                       &trans  &trans
+ &trans     &trans     &trans     &trans    &trans                                                                                           &trans                    &trans                   &trans                       &trans  &trans
+ &trans     &trans     &trans   &kp LBRC  &kp RBRC     &trans                                                  &kp CARET                  &kp KP_N7                 &kp KP_N8                &kp KP_N9                       &trans  &trans
+ &trans   &kp EXCL     &kp AT   &kp LBKT  &kp RBKT   &kp BSLH                                                   &kp AMPS                  &kp KP_N4                 &kp KP_N5                &kp KP_N6                       &trans  &trans
+ &trans   &kp HASH   &kp DLLR   &kp LPAR  &kp RPAR  &kp GRAVE                                                  &kp PRCNT  &shift_right RSHIFT KP_N1  &homey_right RCTRL KP_N2  &homey_right RALT KP_N3  &homey_right RGUI SEMICOLON  &trans
+ &trans  &kp PRCNT  &kp EQUAL  &kp MINUS   &kp SQT   &kp STAR  &trans  &trans  &trans  &trans  &trans  &trans  &kp UNDER                  &kp KP_N0                 &kp KP_N0               &kp KP_DOT                       &trans  &trans
+ &trans     &trans     &trans     &trans    &trans             &trans  &trans  &trans  &trans  &trans  &trans                                &trans                    &trans                   &trans                       &trans  &trans
             >;
         };
 
