@@ -458,6 +458,13 @@
     #define SPACE_REPEAT_DECAY 200 // "tap then hold" for key auto-repeat
     #endif
 
+    // CAPPY_HOLDING_TIME defines how long you need to hold (milliseconds)
+    // cappy to type CapsLock.  Shorter holds are taps that type CapsWord.
+    //
+    #ifndef CAPPY_HOLDING_TIME
+    #define CAPPY_HOLDING_TIME 200
+    #endif
+
     //
     // Glove80 key positions index for positional hold-tap
     // - https://discord.com/channels/877392805654306816/937645688244826154/1066713913351221248
@@ -577,13 +584,6 @@
         #binding-cells = <2>;
         bindings = <&mo>, <&kp>;
     };
-    //
-    // CAPPY_HOLDING_TIME defines how long you need to hold (milliseconds)
-    // cappy to type CapsLock.  Shorter holds are taps that type CapsWord.
-    //
-    #ifndef CAPPY_HOLDING_TIME
-    #define CAPPY_HOLDING_TIME 200
-    #endif
 
     //
     // Tap = CapsWord; Hold = CapsLock
