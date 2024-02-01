@@ -265,6 +265,53 @@
     /* Custom Defined Behaviors */
 / {
     behaviors {
+    // mod/mod-shift tap-dance
+    command_td: command_td_1 {
+        compatible = "zmk,behavior-tap-dance";
+        label = "COMMAND_TAP_DANCE";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&kp LGUI>, <&kp LS(LGUI)>;
+    };
+
+    loption_td: option_td_1 {
+        compatible = "zmk,behavior-tap-dance";
+        label = "LOPTION_TAP_DANCE";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&kp LALT>, <&kp LS(LALT)>;
+    };
+    roption_td: option_td_2 {
+        compatible = "zmk,behavior-tap-dance";
+        label = "ROPTION_TAP_DANCE";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&kp RALT>, <&kp LS(RALT)>;
+    };
+
+    ctrl_td: ctrl_td_1 {
+        compatible = "zmk,behavior-tap-dance";
+        label = "CTRL_TAP_DANCE";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&kp LCTRL>, <&kp LS(LCTRL)>;
+    };
+
+    lshift_td: shift_td_1 {
+        compatible = "zmk,behavior-tap-dance";
+        label = "LSHIFT_TAP_DANCE";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&kp LSHIFT>, <&kp CAPSLOCK >;
+    };
+    rshift_td: shift_td_2 {
+        compatible = "zmk,behavior-tap-dance";
+        label = "LSHIFT_TAP_DANCE";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&kp RSHIFT>, <&kp CAPSLOCK >;
+    };
+
 //////////////////////////////////////////////////////////////////////////
 //
 // ** BEGIN BEHAVIORS (copied from https://my.glove80.com/#/layout/user/c4d374f7-6439-4454-af14-efe617bba9e3)
@@ -273,7 +320,7 @@
 
     //////////////////////////////////////////////////////////////////////////
     //
-    // ** HOME ROW MODIFICATION 
+    // ** HOME ROW MODIFICATION
     //
     //////////////////////////////////////////////////////////////////////////
     //
