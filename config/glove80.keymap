@@ -590,6 +590,7 @@
     //
     cappy: capsword_and_capslock {
         compatible = "zmk,behavior-hold-tap";
+        label = "CAPPY";
         flavor = "tap-preferred";
         tapping-term-ms = <CAPPY_HOLDING_TIME>;
         #binding-cells = <2>;
